@@ -1,0 +1,23 @@
+{
+  // Local development only. Deployments are configured by ../deploy.json and
+  // Freebuff Sites, which supplies the real D1 binding.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pharmacy-api-local",
+  "main": "index.js",
+  "compatibility_date": "2026-11-19",
+  "assets": {
+    "directory": "../frontend/dist",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "pharmacy-db",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "vars": {
+    "SECRET_KEY": "local-development-secret",
+    "ACCESS_TOKEN_MINUTES": "480"
+  }
+}

@@ -1,0 +1,23 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: pharmacy_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: pharmacy_db
+      MYSQL_USER: pharmacy_user
+      MYSQL_PASSWORD: pharmacy_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - pharmacy_mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpass"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pharmacy_mysql_data:

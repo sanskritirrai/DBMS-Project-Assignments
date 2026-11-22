@@ -1,0 +1,13 @@
+{
+  "entrypoint": "worker/index.js",
+  "compatibilityDate": "2026-11-19",
+  "modules": [
+    {
+      "name": "worker/index.js",
+      "type": "esm",
+      "path": "./worker/index.js"
+    }
+  ],
+  "assetsDirectory": "./frontend/dist",
+  "spa": true
+}
