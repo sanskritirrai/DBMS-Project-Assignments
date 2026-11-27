@@ -1,4 +1,5 @@
 # Pharmacy Inventory & Prescription Management
+#Production URL: <https://pharmacy-inventory-prescription-management-3dqfk7.freebuff.site>  
 
 A full-stack starter application with:
 - React + Vite frontend (JavaScript, CSS, Node.js tooling)
